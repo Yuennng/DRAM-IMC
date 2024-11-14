@@ -82,6 +82,7 @@ with open(outfile, 'w') as f:
     f.write("attribute BOX_TYPE : STRING;\n")
     f.write("attribute BOX_TYPE of ddr2_mcb : component is \"user_black_box\";\n")
     
+    ####
     f.write("\n-- component ports\n")
     for line in text.split('\n'):
         ll = "error"
@@ -89,15 +90,16 @@ with open(outfile, 'w') as f:
         vec_size = re.findall(r'(\[.*?\])', line)
         if len(vec_size) == 1:
             c = [l.strip() for l in line.split(vec_size[0])] + vec_size
-            ll = f"{c[1]} : {type_convt(c[0])} std_logic_vector({c[2].split(':')[0][1:]} downto {c[2].split(':')[1][:-1]}),"
+            ll = f"{c[1]} : {type_convt(c[0])} std_logic_vector({c[2].split(':')[0][1:]} downto {c[2].split(':')[1][:-1]});"
         elif len(vec_size) == 0:
             c = [l.strip() for l in line.split()]
             if len(c) == 2:
-                ll = f"{c[1]} : {type_convt(c[0])} std_logic,"
+                ll = f"{c[1]} : {type_convt(c[0])} std_logic;"
             if len(c) == 0:
                 continue
         f.write(ll + '\n')
 
+    ####
     f.write("\n-- internal signals\n")
     for line in text.split('\n'):
         ll = "error"
@@ -114,6 +116,7 @@ with open(outfile, 'w') as f:
                 continue
         f.write(ll + '\n')
 
+    ####
     f.write("\n-- internal signal assigments\n")
     for line in text.split('\n'):
         ll = "error"
@@ -137,6 +140,7 @@ with open(outfile, 'w') as f:
                 ll = f"i_{c[1]} <= {c[1]};"
         f.write(ll + '\n')    
 
+    ####
     f.write("\n-- port map\n")
     for line in text.split('\n'):
         ll = "error"

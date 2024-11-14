@@ -2,70 +2,70 @@ attribute BOX_TYPE : STRING;
 attribute BOX_TYPE of ddr2_mcb : component is "user_black_box";
 
 -- component ports
-mcb3_dram_dq : out std_logic_vector(C3_NUM_DQ_PINS-1 downto 0),
-mcb3_dram_a : out std_logic_vector(C3_MEM_ADDR_WIDTH-1 downto 0),
-mcb3_dram_ba : out std_logic_vector(C3_MEM_BANKADDR_WIDTH-1 downto 0),
-mcb3_dram_ras_n : out std_logic,
-mcb3_dram_cas_n : out std_logic,
-mcb3_dram_we_n : out std_logic,
-mcb3_dram_odt : out std_logic,
-mcb3_dram_cke : out std_logic,
-mcb3_dram_dm : out std_logic,
-mcb3_dram_udqs : out std_logic,
-mcb3_dram_udqs_n : out std_logic,
-mcb3_rzq : out std_logic,
-mcb3_zio : out std_logic,
-mcb3_dram_udm : out std_logic,
-c3_sys_clk_p : in std_logic,
-c3_sys_clk_n : in std_logic,
-c3_sys_rst_i : in std_logic,
-c3_calib_done : out std_logic,
-c3_clk0 : out std_logic,
-c3_rst0 : out std_logic,
-mcb3_dram_dqs : out std_logic,
-mcb3_dram_dqs_n : out std_logic,
-mcb3_dram_ck : out std_logic,
-mcb3_dram_ck_n : out std_logic,
-c3_s0_axi_aclk : in std_logic,
-c3_s0_axi_aresetn : in std_logic,
-c3_s0_axi_awid : in std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0),
-c3_s0_axi_awaddr : in std_logic_vector(C3_S0_AXI_ADDR_WIDTH - 1 downto 0),
-c3_s0_axi_awlen : in std_logic_vector(7 downto 0),
-c3_s0_axi_awsize : in std_logic_vector(2 downto 0),
-c3_s0_axi_awburst : in std_logic_vector(1 downto 0),
-c3_s0_axi_awlock : in std_logic_vector(0 downto 0),
-c3_s0_axi_awcache : in std_logic_vector(3 downto 0),
-c3_s0_axi_awprot : in std_logic_vector(2 downto 0),
-c3_s0_axi_awqos : in std_logic_vector(3 downto 0),
-c3_s0_axi_awvalid : in std_logic,
-c3_s0_axi_awready : out std_logic,
-c3_s0_axi_wdata : in std_logic_vector(C3_S0_AXI_DATA_WIDTH - 1 downto 0),
-c3_s0_axi_wstrb : in std_logic_vector(C3_S0_AXI_DATA_WIDTH/8 - 1 downto 0),
-c3_s0_axi_wlast : in std_logic,
-c3_s0_axi_wvalid : in std_logic,
-c3_s0_axi_wready : out std_logic,
-c3_s0_axi_bid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0),
-c3_s0_axi_wid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0),
-c3_s0_axi_bresp : out std_logic_vector(1 downto 0),
-c3_s0_axi_bvalid : out std_logic,
-c3_s0_axi_bready : in std_logic,
-c3_s0_axi_arid : in std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0),
-c3_s0_axi_araddr : in std_logic_vector(C3_S0_AXI_ADDR_WIDTH - 1 downto 0),
-c3_s0_axi_arlen : in std_logic_vector(7 downto 0),
-c3_s0_axi_arsize : in std_logic_vector(2 downto 0),
-c3_s0_axi_arburst : in std_logic_vector(1 downto 0),
-c3_s0_axi_arlock : in std_logic_vector(0 downto 0),
-c3_s0_axi_arcache : in std_logic_vector(3 downto 0),
-c3_s0_axi_arprot : in std_logic_vector(2 downto 0),
-c3_s0_axi_arqos : in std_logic_vector(3 downto 0),
-c3_s0_axi_arvalid : in std_logic,
-c3_s0_axi_arready : out std_logic,
-c3_s0_axi_rid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0),
-c3_s0_axi_rdata : out std_logic_vector(C3_S0_AXI_DATA_WIDTH - 1 downto 0),
-c3_s0_axi_rresp : out std_logic_vector(1 downto 0),
-c3_s0_axi_rlast : out std_logic,
-c3_s0_axi_rvalid : out std_logic,
-c3_s0_axi_rready : in std_logic,
+mcb3_dram_dq : out std_logic_vector(C3_NUM_DQ_PINS-1 downto 0);
+mcb3_dram_a : out std_logic_vector(C3_MEM_ADDR_WIDTH-1 downto 0);
+mcb3_dram_ba : out std_logic_vector(C3_MEM_BANKADDR_WIDTH-1 downto 0);
+mcb3_dram_ras_n : out std_logic;
+mcb3_dram_cas_n : out std_logic;
+mcb3_dram_we_n : out std_logic;
+mcb3_dram_odt : out std_logic;
+mcb3_dram_cke : out std_logic;
+mcb3_dram_dm : out std_logic;
+mcb3_dram_udqs : out std_logic;
+mcb3_dram_udqs_n : out std_logic;
+mcb3_rzq : out std_logic;
+mcb3_zio : out std_logic;
+mcb3_dram_udm : out std_logic;
+c3_sys_clk_p : in std_logic;
+c3_sys_clk_n : in std_logic;
+c3_sys_rst_i : in std_logic;
+c3_calib_done : out std_logic;
+c3_clk0 : out std_logic;
+c3_rst0 : out std_logic;
+mcb3_dram_dqs : out std_logic;
+mcb3_dram_dqs_n : out std_logic;
+mcb3_dram_ck : out std_logic;
+mcb3_dram_ck_n : out std_logic;
+c3_s0_axi_aclk : in std_logic;
+c3_s0_axi_aresetn : in std_logic;
+c3_s0_axi_awid : in std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0);
+c3_s0_axi_awaddr : in std_logic_vector(C3_S0_AXI_ADDR_WIDTH - 1 downto 0);
+c3_s0_axi_awlen : in std_logic_vector(7 downto 0);
+c3_s0_axi_awsize : in std_logic_vector(2 downto 0);
+c3_s0_axi_awburst : in std_logic_vector(1 downto 0);
+c3_s0_axi_awlock : in std_logic_vector(0 downto 0);
+c3_s0_axi_awcache : in std_logic_vector(3 downto 0);
+c3_s0_axi_awprot : in std_logic_vector(2 downto 0);
+c3_s0_axi_awqos : in std_logic_vector(3 downto 0);
+c3_s0_axi_awvalid : in std_logic;
+c3_s0_axi_awready : out std_logic;
+c3_s0_axi_wdata : in std_logic_vector(C3_S0_AXI_DATA_WIDTH - 1 downto 0);
+c3_s0_axi_wstrb : in std_logic_vector(C3_S0_AXI_DATA_WIDTH/8 - 1 downto 0);
+c3_s0_axi_wlast : in std_logic;
+c3_s0_axi_wvalid : in std_logic;
+c3_s0_axi_wready : out std_logic;
+c3_s0_axi_bid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0);
+c3_s0_axi_wid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0);
+c3_s0_axi_bresp : out std_logic_vector(1 downto 0);
+c3_s0_axi_bvalid : out std_logic;
+c3_s0_axi_bready : in std_logic;
+c3_s0_axi_arid : in std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0);
+c3_s0_axi_araddr : in std_logic_vector(C3_S0_AXI_ADDR_WIDTH - 1 downto 0);
+c3_s0_axi_arlen : in std_logic_vector(7 downto 0);
+c3_s0_axi_arsize : in std_logic_vector(2 downto 0);
+c3_s0_axi_arburst : in std_logic_vector(1 downto 0);
+c3_s0_axi_arlock : in std_logic_vector(0 downto 0);
+c3_s0_axi_arcache : in std_logic_vector(3 downto 0);
+c3_s0_axi_arprot : in std_logic_vector(2 downto 0);
+c3_s0_axi_arqos : in std_logic_vector(3 downto 0);
+c3_s0_axi_arvalid : in std_logic;
+c3_s0_axi_arready : out std_logic;
+c3_s0_axi_rid : out std_logic_vector(C3_S0_AXI_ID_WIDTH - 1 downto 0);
+c3_s0_axi_rdata : out std_logic_vector(C3_S0_AXI_DATA_WIDTH - 1 downto 0);
+c3_s0_axi_rresp : out std_logic_vector(1 downto 0);
+c3_s0_axi_rlast : out std_logic;
+c3_s0_axi_rvalid : out std_logic;
+c3_s0_axi_rready : in std_logic;
 
 -- internal signals
 signal i_mcb3_dram_dq : std_logic_vector(C3_NUM_DQ_PINS-1 downto 0);
