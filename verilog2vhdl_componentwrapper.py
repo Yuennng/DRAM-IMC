@@ -69,10 +69,18 @@ outfile = "out.vhd"
 
 import re
 
+def type_convt(t):
+    if "out" in t:
+        return "out"
+    elif "in" in t:
+        return "in"
+    else:
+        return "inout"
+
 with open(outfile, 'w') as f:
 
     f.write("attribute BOX_TYPE : STRING;\n")
-    f.write("attribute BOX_TYPE of system_mcb_ddr2_wrapper : component is \"user_black_box\";\n")
+    f.write("attribute BOX_TYPE of ddr2_mcb : component is \"user_black_box\";\n")
     
     f.write("\n-- component ports\n")
     for line in text.split('\n'):
@@ -81,11 +89,11 @@ with open(outfile, 'w') as f:
         vec_size = re.findall(r'(\[.*?\])', line)
         if len(vec_size) == 1:
             c = [l.strip() for l in line.split(vec_size[0])] + vec_size
-            ll = f"{c[1]} : {c[0]} std_logic_vector({c[2].split(':')[0][1:]} downto {c[2].split(':')[1][:-1]}),"
+            ll = f"{c[1]} : {type_convt(c[0])} std_logic_vector({c[2].split(':')[0][1:]} downto {c[2].split(':')[1][:-1]}),"
         elif len(vec_size) == 0:
             c = [l.strip() for l in line.split()]
             if len(c) == 2:
-                ll = f"{c[1]} : {c[0]} std_logic,"
+                ll = f"{c[1]} : {type_convt(c[0])} std_logic,"
             if len(c) == 0:
                 continue
         f.write(ll + '\n')
