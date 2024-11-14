@@ -70,6 +70,9 @@ outfile = "out.vhd"
 import re
 
 with open(outfile, 'w') as f:
+
+    f.write("attribute BOX_TYPE : STRING;\n")
+    f.write("attribute BOX_TYPE of system_mcb_ddr2_wrapper : component is \"user_black_box\";\n")
     
     f.write("\n-- component ports\n")
     for line in text.split('\n'):
@@ -136,15 +139,15 @@ with open(outfile, 'w') as f:
             if len(c) == 0:
                 continue
             if "out" in c[0]:
-                ll = f"{c[1]} => i_{c[1]};"
+                ll = f"{c[1]} => i_{c[1]},"
             else:
-                ll = f"{c[1]} => {c[1]};"
+                ll = f"{c[1]} => {c[1]},"
         elif len(vec_size) == 0:
             c = [l.strip() for l in line.split()]
             if len(c) == 0:
                 continue
             if "out" in c[0]:
-                ll = f"{c[1]} => i_{c[1]};"
+                ll = f"{c[1]} => i_{c[1]},"
             if len(c) == 2:
-                ll = f"{c[1]} => {c[1]};"
+                ll = f"{c[1]} => {c[1]},"
         f.write(ll + '\n')  
